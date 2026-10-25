@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #00f3ff;
+  --color-neon-purple: #bd00ff;
+  --color-dark-bg: #0b0c10;
+  --color-dark-card: rgba(25, 26, 35, 0.6);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-dark-bg);
+    color: white;
+    font-family: 'Outfit', 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(189, 0, 255, 0.15), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(0, 243, 255, 0.15), transparent 25%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--color-dark-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-glass-border);
+    border-radius: 1rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .neon-text-blue {
+    color: var(--color-neon-blue);
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+  }
+
+  .neon-text-purple {
+    color: var(--color-neon-purple);
+    text-shadow: 0 0 10px rgba(189, 0, 255, 0.5);
+  }
+
+  .neon-border-blue {
+    border-color: var(--color-neon-blue);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+  }
+
+  .neon-border-purple {
+    border-color: var(--color-neon-purple);
+    box-shadow: 0 0 10px rgba(189, 0, 255, 0.3);
+  }
+
+  .btn-neon-blue {
+    background: transparent;
+    border: 1px solid var(--color-neon-blue);
+    color: var(--color-neon-blue);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  .btn-neon-blue:hover {
+    background: rgba(0, 243, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+  }
+
+  .btn-neon-purple {
+    background: transparent;
+    border: 1px solid var(--color-neon-purple);
+    color: var(--color-neon-purple);
+    box-shadow: 0 0 10px rgba(189, 0, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  .btn-neon-purple:hover {
+    background: rgba(189, 0, 255, 0.1);
+    box-shadow: 0 0 20px rgba(189, 0, 255, 0.5);
+  }
+}
+
+/* Custom Scrollbar for better UI */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neon-blue);
+}
